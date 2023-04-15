@@ -1,0 +1,53 @@
+<meta charset="UTF-8"> 
+ 
+ <h1>PROGRAMA JUEGO DE LOTERÍA</h1>
+ <br>
+
+<script>
+
+    //Funciones
+
+    function saltarLinea() {   
+
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+ 
+    }
+
+    function imprimir(frase) {  
+
+        document.write(frase);
+        saltarLinea();
+
+    }
+
+    function sorteo(n) {
+
+        return( n = (Math.round(Math.random()*numeroLimite)) );
+
+    }
+
+    var numeroLimite = prompt("Ingrese un número que servirá de límite mayor para los valores que saldrán en el sorteo y usted tendrá que adivinar");
+    var numeroPensado = sorteo();
+    var numeroLanzado = parseInt(prompt("Ingrese un número de 0 a " + numeroLimite));           
+    
+    if ( numeroPensado == numeroLanzado ) {
+
+        imprimir("Usted acertó, el número efectivamente era " + numeroPensado )
+
+    } 
+
+    if(numeroPensado > numeroLanzado) {
+
+        imprimir("Usted no acertó, el número pensado era mayor")
+
+    }
+
+    if(numeroPensado < numeroLanzado) {
+
+        imprimir("Usted no acertó, el número pensado era menor")
+
+    }
+   
+</script>
